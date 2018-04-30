@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+</head>
+
+<body>
+<div id="a"></div>
+<script>
+
+    $.ajax({
+        url: './a.json',
+        success: function (data) {
+            let txtHtml = ''
+            data.forEach(item => {
+                txtHtml += `<h3>${item.txtTitle}<h3><p>${item.articleText}</p><br>`
+            })
+            $('#a').append(txtHtml)
+        }
+    })
+</script>
+</body>
+</html>
